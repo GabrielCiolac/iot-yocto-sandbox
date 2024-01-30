@@ -8,6 +8,8 @@ config ()
 write-machine-config ()
 {
     echo "MACHINE = \"$1\"" >> $2
+    echo $PWD/$2
+    cat $2
 }
 
 usage ()
@@ -34,6 +36,6 @@ PATH_BBLAYERS_CONF=${PWD}/bblayers.conf
 cd poky
 source oe-init-build-env build
 config $PATH_LOCAL_CONF
-write-machine-config $TARGET local.conf
+write-machine-config $TARGET conf/local.conf
 config $PATH_BBLAYERS_CONF
 bitbake core-image-minimal
