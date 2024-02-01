@@ -38,4 +38,4 @@ source oe-init-build-env build
 config $PATH_LOCAL_CONF
 write-machine-config $TARGET conf/local.conf
 config $PATH_BBLAYERS_CONF
-bitbake core-image-minimal
+bitbake core-image-base
